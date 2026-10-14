@@ -124,6 +124,12 @@ if __name__ == "__main__":
     st = state("fuse", 96, 1, phase=1, until=99)
     p.ignite(st, st.toys[0][0], 2.0)
     assert st.burn is None
+    st = state("leave", 96, 1, who=1, phase=2, until=99)  # new toys arrive while one is still burning
+    p.ignite(st, st.toys[0][0], 2.0)
+    st.cs[1].x = st.homes[1] + 0.1
+    p.update(st, 2.5, 1 / 15, 96, 1)
+    assert st.phase == 3 and st.burn is None
+    p.scene(2.5, st, 96, 24, 1, False)
 
     # 8. sent away: a shout from outside, then they burn each other and everything fades to nothing
     for mood, phase in (("read", 0), ("leave", 1), ("fuse", 1)):

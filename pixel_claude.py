@@ -292,6 +292,7 @@ def update(st, t, dt, w, s, cursor=None):
                 st.phase, st.mark = 1, t
             elif st.phase == 2 and me.x <= st.homes[st.who]:  # back, and it brought new toys
                 me.x, st.phase, st.until, st.toys = st.homes[st.who], 3, t + 1.5, scatter(st.names)
+                st.burn = None  # a toy that was mid-burn is gone with the old set
         elif st.phase == 1 and t - st.mark > AWAY:
             st.phase = 2
     elif st.mood == "fuse":  # phases: 0 walk into each other, 1 fused, 2 walk apart, 3 home
