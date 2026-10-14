@@ -1,0 +1,5 @@
+#!/bin/sh
+# Pixel Claude: bring the beasts onto the desktop; send_away dismisses them.
+# Optional argument: size in screen pixels per art pixel, e.g. summon_beasts 5
+here=$(dirname "$(readlink -f "$0")")
+setsid -f python3 "$here/pixel_claude_gtk.py" "$@" >/dev/null 2>&1

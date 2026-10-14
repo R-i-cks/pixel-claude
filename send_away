@@ -1,0 +1,3 @@
+#!/bin/sh
+# Pixel Claude: tell the beasts to leave. They hear "dracarys", burn each other and the widget exits.
+pkill -USR1 -f '^python3 .*pixel_claude_gtk\.py' || { echo "send_away: no beasts to send away" >&2; exit 1; }
