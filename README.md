@@ -48,7 +48,7 @@ There are no Python packages to install.
 ## Run
 
 ```
-git clone <this repo> && cd pixel-claude
+git clone https://github.com/R-i-cks/pixel-claude && cd pixel-claude
 ./summon_beasts          # they appear, bottom-right
 ./send_away              # someone shouts "dracarys" and they leave in flames
 ```
